@@ -1,0 +1,8 @@
+id,parent_id,materialId,description,qty,price
+4f09d84e-3f59-4f7f-83f1-d57be46fe8e2,78fae2e2-ccbe-4a2b-9be1-314fe620785f,MAT-001,Wireless Mouse Block,2,25.5
+1591f4db-a2d9-4824-9b7e-96791ccda1b4,78fae2e2-ccbe-4a2b-9be1-314fe620785f,MAT-002,Mechanical Keyboard,1,89.99
+d76378e9-d36c-486a-932f-488669e46a74,2902636a-2ee3-4877-b9f1-321356ca62ec,MAT-004,4K USB-C Monitor 27inch,1,399.5
+468b31a3-2ee9-43c3-8ee3-4bfd3d5248fe,df979067-15df-4d6a-bf0c-f3708092ec06,MAT-003,Ergonomic Office Chair,2,249.0
+b1cfb241-11d8-4903-b09e-734e0fe5cb96,df979067-15df-4d6a-bf0c-f3708092ec06,MAT-005,Recycled Paper Notebook,10,4.95
+b453ef69-e7be-40f4-a02e-c75c57b77b7f,09be9752-6f29-4fc8-90f6-950c0bb753a3,MAT-005,Recycled Paper Notebook,2,4.95
+912b774c-47bc-49fb-bc28-9844ba226db2,66d79e56-11b3-4603-9034-722a559868ea,MAT-003,Ergonomic Office Chair,1,249.0
