@@ -4,25 +4,46 @@
   "private": true,
   "dependencies": {
     "@cap-js/hana": "^2",
-    "@sap/cds": "^9"
+    "@sap/cds": "^9",
+    "cors": "^2.8.6"
   },
   "devDependencies": {
-    "@cap-js/sqlite": "^2.4"
+    "@cap-js/sqlite": "^2.4",
+    "@sap/cds-dk": "^9"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "deploy": "cds deploy"
   },
   "cds": {
-    "requires": {
-      "db": "hana"
-    },
     "protocols": {
       "odata": {
         "path": "/odata/v4/catalog",
         "cors": {
-          "origin": "*"
+          "origin": "*",
+          "credentials": true,
+          "methods": [
+            "GET",
+            "POST",
+            "PUT",
+            "DELETE",
+            "OPTIONS"
+          ],
+          "allowedHeaders": [
+            "Content-Type",
+            "Authorization",
+            "X-Requested-With"
+          ]
         }
       }
+    },
+    "requires": {
+      "hana": {
+        "deploy": {
+          "ignore_case": true
+        }
+      },
+      "auth": "mocked"
     }
   }
 }

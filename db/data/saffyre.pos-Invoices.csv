@@ -1,6 +1,4 @@
-id,invoiceNumber,customerName,customerEmail,grandTotal,createdAt,createdBy,modifiedAt,modifiedBy
-78fae2e2-ccbe-4a2b-9be1-314fe620785f,INV-2026-001,John Doe,john.doe@example.com,140.99,2026-06-05T10:30:00Z,admin@saffyre.pos,2026-06-05T10:30:00Z,admin@saffyre.pos
-2902636a-2ee3-4877-b9f1-321356ca62ec,INV-2026-002,Jane Smith,jane.smith@example.com,399.5,2026-06-05T10:30:00Z,admin@saffyre.pos,2026-06-05T10:30:00Z,admin@saffyre.pos
-df979067-15df-4d6a-bf0c-f3708092ec06,INV-2026-003,Acme Corp,info@acme.com,547.5,2026-06-05T10:30:00Z,admin@saffyre.pos,2026-06-05T10:30:00Z,admin@saffyre.pos
-09be9752-6f29-4fc8-90f6-950c0bb753a3,INV-2026-004,Global Tech,billing@globaltech.io,9.9,2026-06-05T10:30:00Z,admin@saffyre.pos,2026-06-05T10:30:00Z,admin@saffyre.pos
-66d79e56-11b3-4603-9034-722a559868ea,INV-2026-005,Sarah Connor,sarah.c@cyberdyne.net,249.0,2026-06-05T10:30:00Z,admin@saffyre.pos,2026-06-05T10:30:00Z,admin@saffyre.pos
+invoiceNumber,customerName,customerEmail,grandTotal,createdAt,createdBy,modifiedAt,modifiedBy
+INV-2026-001,John Doe,john.doe@example.com,140.99,2026-06-05T10:30:00Z,admin@saffyre.pos,2026-06-05T10:30:00Z,admin@saffyre.pos
+INV-2026-002,Jane Smith,jane.smith@example.com,399.5,2026-06-05T10:30:00Z,admin@saffyre.pos,2026-06-05T10:30:00Z,admin@saffyre.pos
+INV-2026-003,Acme Corp,info@acme.com,547.5,2026-06-05T10:30:00Z,admin@saffyre.pos,2026-06-05T10:30:00Z,admin@saffyre.pos
