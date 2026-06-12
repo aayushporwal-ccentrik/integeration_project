@@ -1,5 +1,5 @@
 _schema-version: 3.3.0
-ID: prac
+ID: prac2
 version: 1.0.0
 
 description: "A simple CAP project."
@@ -10,72 +10,61 @@ parameters:
 build-parameters:
   before-all:
     - builder: custom
-
       commands:
         - npm ci
-
         - npx cds build --production
 
 modules:
   # --------------------- SERVER MODULE ------------------------
-
-  - name: prac-srv
-
+  - name: prac2-srv
     type: nodejs
-
     path: gen/srv
-
     parameters:
       instances: 1
-
       memory: 256M
-
       disk-quota: 1024M
-
       buildpack: nodejs_buildpack
-
     build-parameters:
       builder: npm-ci
-
     provides:
       - name: srv-api
-
         properties:
           srv-url: ${default-url}
-
     requires:
-      - name: prac-db
+      - name: prac2-db
+      - name: prac2-auth
 
   # ----------------    DATABASE DEPLOYER MODULE ----------------
-
-  - name: prac-db-deployer
-
+  - name: prac2-db-deployer
     type: hdb
-
     path: gen/db
-
     requires:
-      - name: prac-db
-
+      - name: prac2-db
     parameters:
       memory: 256M
-
       disk-quota: 1024M
       buildpack: nodejs_buildpack
-
     build-parameters:
-      supported-platforms:
-        []
-        # Ensures proper schema binding on CF server tasks
+      supported-platforms: [] # Ensures proper schema binding on CF server tasks
 
 resources:
   # ----------------- SAP HANA HDI CONTAINER -------------------
-
-  - name: prac-db
-
+  - name: prac2-db
     type: com.sap.xs.hdi-container
-
     parameters:
       service: hana
-
       service-plan: hdi-shared
+
+  - name: prac2-auth
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
+      config:
+        xsappname: prac2-${org}-${space}
+        tenant-mode: dedicated
+        oauth2-configuration:
+          credential-types:
+            - "binding-secret"
+            - "x509"

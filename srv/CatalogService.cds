@@ -1,6 +1,6 @@
 using { saffyre.pos as my } from '../db/schema';
 
-service CatalogService {
+service CatalogService @(requires: 'authenticated-user') {
     entity Customers as projection on my.Customers;
     entity Materials as projection on my.Materials;
     entity Invoices  as projection on my.Invoices;

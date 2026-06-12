@@ -1,0 +1,26 @@
+{
+  "xsappname": "prac2",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.read",
+      "description": "Read access"
+    },
+    {
+      "name": "$XSAPPNAME.write",
+      "description": "Write access"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Viewer",
+      "description": "Read only",
+      "scope-references": ["$XSAPPNAME.read"]
+    },
+    {
+      "name": "Editor",
+      "description": "Read and write",
+      "scope-references": ["$XSAPPNAME.read", "$XSAPPNAME.write"]
+    }
+  ]
+}

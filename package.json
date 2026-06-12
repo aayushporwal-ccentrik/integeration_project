@@ -1,49 +1,27 @@
 {
-  "name": "prac",
+  "name": "prac2",
   "version": "1.0.0",
-  "private": true,
   "dependencies": {
     "@cap-js/hana": "^2",
     "@sap/cds": "^9",
-    "cors": "^2.8.6"
+    "@sap/xssec": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^2.4",
-    "@sap/cds-dk": "^9"
+    "@sap/cds-dk": "^9.9.2"
   },
   "scripts": {
-    "start": "cds-serve",
-    "deploy": "cds deploy"
+    "start": "cds-serve"
   },
+  "private": true,
   "cds": {
-    "protocols": {
-      "odata": {
-        "path": "/odata/v4/catalog",
-        "cors": {
-          "origin": "*",
-          "credentials": true,
-          "methods": [
-            "GET",
-            "POST",
-            "PUT",
-            "DELETE",
-            "OPTIONS"
-          ],
-          "allowedHeaders": [
-            "Content-Type",
-            "Authorization",
-            "X-Requested-With"
-          ]
-        }
-      }
-    },
     "requires": {
-      "hana": {
-        "deploy": {
-          "ignore_case": true
-        }
+      "[production]": {
+        "auth": "xsuaa"
       },
-      "auth": "mocked"
+      "db": {
+        "kind": "hana"
+      }
     }
   }
 }
